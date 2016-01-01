@@ -1,0 +1,36 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="pull-right col-sm-2 col-md-2 hidden-xs text-center">
+			<h1 class=""><i class="fa fa-lg fa-arrow-up"></i></h1>
+			<p ng-show="loaded.years && years" ng-cloak>Choose your Year</p>
+			<p ng-show="loaded.years && (!years || years.length <= 0)" ng-cloak>Create New NaNo</p>
+		</div>
+		<h1>NaNoWriMo Tools</h1>
+		<p>Tools to help you complete NaNoWriMo.</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<i class="fa fa-5x fa-bar-chart"></i>
+			<h2>Progress</h2>
+			<p>Track your daily word count while writing your novel.  Review your progress, daily goal and final goal.  Continue tracking past the month of November.</p>
+			<p><a class="btn btn-default" ui-sref="progress" role="button">Start Tracking &raquo;</a></p>
+			<hr class="hidden-lg hidden-md"/>
+		</div>
+		<div class="col-md-4 text-center">
+			<i class="fa fa-5x fa-users"></i>
+			<h2>Characters</h2>
+			<p>Create and review profiles for each of your major and secondary characters. Include and avatar or sketch for each character. Describe their main characteristics.</p>
+			<p><a class="btn btn-default" ui-sref="characters" role="button">Start Describing &raquo;</a></p>
+			<hr class="hidden-lg hidden-md"/>
+		</div>
+		<div class="col-md-4 text-center">
+			<i class="fa fa-5x fa-clock-o"></i>
+			<h2>Timeline</h2>
+			<p>Plot events for each character in a sequential timeline.  Drag and stretch events that overlap.</p>
+			<p><a class="btn btn-default" ui-sref="timeline" role="button">Start Logging &raquo;</a></p>
+			<hr class="hidden-lg hidden-md"/>
+		</div>
+	</div>
+</div>

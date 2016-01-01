@@ -1,0 +1,32 @@
+<div class="container top-container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="page-header">
+				<h1>Word Count <small>Count the number of words in your text.</small></h1>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<textarea class="form-control" style="height: 350px; resize: none" word-counter="textcontent" word-results="countresult"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 col-md-3 text-center">
+					<h2 class="text-primary"><b>{{countresult.words | number}}</b></h2>
+					<h4 class="text-primary">Words</h4>
+				</div>
+				<div class="col-sm-3 col-md-3 text-center">
+					<h2>{{countresult.characters | number}}</h2>
+					<h4>Characters</h4>
+				</div>
+				<div class="col-sm-3 col-md-3 text-center">
+					<h2>{{countresult.sentences | number}}</h2>
+					<h4>Sentences</h4>
+				</div>
+				<div class="col-sm-3 col-md-3 text-center">
+					<h2>{{countresult.paragraphs | number}}</h2>
+					<h4>Paragraphs</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

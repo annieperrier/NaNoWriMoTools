@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NaNoWriMo Tools</title>
+	<link href="img/favicon.png" rel="icon" type="image/x-icon" />
+
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/jquery.bxslider.4.1.2-custom.css"/>
+	<link rel="stylesheet" href="css/bootstrap-theme-cosmo.min.css"/>
+	<link rel="stylesheet" href="css/theme.css"/>
+</head>
+<body role="document" ng-controller="AppCtrl">
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<span ui-sref-active="active">
+					<a class="navbar-brand" ui-sref="welcome">NaNoWriMo Tools</a>
+				</span>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li ui-sref-active="active"><a ui-sref="progress"><i class="fa fa-fw fa-bar-chart hidden-sm"></i> Progress</a></li>
+					<li ui-sref-active="active"><a ui-sref="characters"><i class="fa fa-fw fa-users hidden-sm"></i> Characters</a></li>
+					<li ui-sref-active="active"><a ui-sref="timeline"><i class="fa fa-fw fa-clock-o hidden-sm"></i> Timeline</a></li>
+					<li ui-sref-active="active"><a ui-sref="wordcount"><i class="fa fa-fw fa-file-word-o hidden-sm"></i> Word Count</a></li>
+				</ul>
+				<ul class="nav navbar-nav  navbar-right">
+					<li ui-sref-active="active">
+						<a ui-sref="setup">
+							<span ng-show="loaded.years && (!years || years.length <= 0)" ng-cloak>Create New Year </span>
+							<i class="fa fa-fw fa-lg fa-plus-circle"></i>
+						</a>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-right" ng-show="loaded.years && years && years.length > 0" ng-cloak>
+					<div class="form-group">
+						<select
+							class="form-control"
+							ng-model="curyear"
+							ng-change="changeYear(curyear)"
+							ng-init="curyear=curyear"
+							ng-options="val.year for (key,val) in years | orderBy:'year':true"
+						>
+						</select>
+					</div>
+	  			</form>
+			</div>
+		</div>
+	</div>
+
+	<div ui-view></div>
+
+
+	<div class="container">
+		<hr>
+		<footer>
+			<a href="http://nanowrimo.org/" target="_blank" class="pull-right">NaNoWriMo Official Site &raquo;</a>
+			<p>&copy; ASP 2014</p>
+		</footer>
+	</div>
+
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/vendor/angular.min.js"></script>
+	<script src="js/vendor/angular-ui-router.min.js"></script>
+	<script src="js/vendor/d3.v3.min.js"></script>
+	<script src="js/vendor/jquery.bxslider.4.1.2-custom.js"></script>
+	<script src="js/vendor/angular-local-storage.min.js"></script>
+	<script src="js/vendor/Countable.js"></script>
+
+	<script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/app-config.js"></script>
+	<script src="sections/setup/setup.js"></script>
+	<script src="sections/progress/progress.js"></script>
+	<script src="sections/characters/characters.js"></script>
+	<script src="sections/wordcount/wordcount.js"></script>
+	<script src="sections/timeline/timeline.js"></script>
+	<script src="sections/timeline/timeline-lib.js"></script>
+
+</body>
+</html>

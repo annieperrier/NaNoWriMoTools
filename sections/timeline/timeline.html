@@ -1,0 +1,99 @@
+<div class="container top-container timeline">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="page-header">
+				<h1>Timeline <small>Map the timeline of your novel.</small></h1>
+			</div>
+			<div class="row">
+				<div class="col-md-9">
+					<canvas id='surface' width="800" height="600">
+				</div>
+				<div class="col-md-3">
+					<div id="data">
+						<form role="form">
+							<div class="form-group">
+								<label class="control-label" for="date">Title: </label>
+								<input class="form-control input-sm" id="title" size="50"/>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label" for="text">Details: </label>
+								<textarea class="form-control input-sm" id="text" rows="10" cols="40"></textarea>
+							</div>
+						</form>
+					</div>
+					<div id="save">
+						<form role="form">
+							<div class="form-group">
+								<label class="control-label" for="date">Filename: </label>
+								<input class="form-control input-sm" id="filename" />
+								<button class="btn btn-default btn-sm" onclick="save();">Save</button>
+							</div>
+
+							<div class="form-group">
+								<select class="form-control input-sm" id="loadname"></select>
+								<button class="btn btn-default btn-sm" onclick="load();">Load</button>
+								<button class="btn btn-default btn-sm" onclick="deleteSave();">Delete</button>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control" id="rawdata"></textarea>
+								<button class="btn btn-default btn-sm" onclick="loadraw();">Load Raw Data</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Instructions</h2>
+					<p>
+						<ul>
+							<li>Create new line : click left edge</li>
+							<li>Change line default color : click the line thumb to change, click on a new color</li>
+							<li>Change the line default text : click on the line's circle to use editor</li>
+						</ul>
+					</p>
+					<p>
+						<ul>
+							<li>Create new chapter mark : click top edge</li>
+							<li>Move chapter mark : drag chapter marker left/right</li>
+							<li>Delete chapter mark : drag chapter marker down</li>
+							<li>Change marker to push mode : click marker thumb</li>
+							<li>Change the marker default text : click on the marker's circle to use editor</li>
+							<li>Reorder chapters : Click the top left green square for chapter mode, drag chapters left/right</li>
+						</ul>
+					</p>
+					<p>
+						<ul>
+							<li>Create new event : click on a line</li>
+							<li>Move event : drag event left/right</li>
+							<li>Resize event : drag right edge of event left/right</li>
+							<li>Move event to new line : drag event up/down to other line</li>
+							<li>Delete event : drag event up/down off of line</li>
+							<li>Change event color : click the event to change, click on a new color</li>
+							<li>Change the event text : click on the event's text to use editor</li>
+						</ul>
+					</p>
+					<p>
+						<ul>
+							<li>Scroll view : drag the black area left/right</li>
+							<li>Zoom View : drag the black area up/down</li>
+						</ul>
+					</p>
+					<p>
+						<ul>
+							<li>Save your work : enter a filename and click save</li>
+							<li>Load previous work : select a saved filename and click load</li>
+							<li>Delete previous work : select a saved filename and click Delete</li>
+							<li>Save your work to external source : after saving, copy the save data from the Raw Data textarea</li>
+							<li>Load work from external source : paste data into Raw Data textarea and click Load Raw Data</li>
+							<li>Start a new piece of work : reload page</li>
+						</ul>
+					</p>
+					<p>Timeline tool from: <a href="http://madoxlabs.github.io/Misc/timeline.html">MadoxLabs</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

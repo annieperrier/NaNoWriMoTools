@@ -1,0 +1,90 @@
+<div class="container top-container">
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<form ng-if="loaded && curyear.year" class="form-inline visible-lg visible-md header-form-sm pull-right" role="form" name="quickform" id="quickform" ng-submit="saveQuickProgress()">
+				<div class="form-group">
+					<label class="sr-only" for="quickwords">Today's Words</label>
+					<input type="number" class="form-control" name="quickwords" ng-model="quickwords" placeholder="Today's Words">
+					<button type="submit" class="btn btn-default"><i class="fa fa-fw fa-plus-circle"></i></button>
+				</div>
+			</form>
+			<h1>Progress <small>How many words have you written today?</small></h1>
+		</div>
+	</div>
+</div>
+<div class="row" ng-if="loaded && !curyear.year">
+	<div class="col-lg-12">
+		<div role="alert" class="alert alert-danger">
+			Please create a year to use this features.
+		</div>
+	</div>
+</div>
+<div class="row" ng-if="loaded && curyear.year">
+	<div class="col-lg-12">
+		<div class="row">
+			<div id="chartContainer">
+				<chart-bar chart-data="progressData"></chart-bar>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" ng-if="loaded && curyear.year">
+	<div class="col-sm-6 col-md-4 col-lg-3">
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Add/Edit Daily Word Count</h3>
+		</div>
+		<div class="panel-body">
+			<form class="form-horizontal" role="form" name="fullform" id="fullform" ng-submit="saveProgress()">
+				<div class="form-group form-group-sm">
+					<label class="control-label col-sm-2 col-md-3 col-lg-3" for="date">Date: </label>
+					<div class="col-sm-10 col-md-9 col-lg-9">
+						<input type="date" class="form-control" name="date" ng-model="date">
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<label class="control-label col-sm-2 col-md-3 col-lg-3" for="words">Words: </label>
+					<div class="col-sm-10 col-md-9 col-lg-9">
+						<input type="number" class="form-control" name="words" ng-model="words">
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<div class="col-lg-12">
+						<button type="submit" class="btn btn-default btn-sm pull-right">Save</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-4 col-lg-3">
+		<div class="panel panel-danger">
+		<div class="panel-heading">
+			<h3 class="panel-title">Delete Daily Word Count</h3>
+		</div>
+		<div class="panel-body">
+			<form class="form-horizontal" role="form" name="deleteform" id="deleteform" ng-submit="deleteProgress()">
+				<div class="form-group form-group-sm">
+					<label class="control-label col-sm-2 col-md-3 col-lg-3" for="deletedate">Date: </label>
+					<div class="col-sm-10 col-md-9 col-lg-9">
+					<select
+						class="form-control"
+						ng-model="deletedate"
+						ng-options="val.date for val in progressData | orderBy:'date'"
+					>
+						<option value="">-- Select Date --</option>
+					</select>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<div class="col-lg-12">
+						<button type="submit" class="btn btn-danger btn-sm pull-right">Delete</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
